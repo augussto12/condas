@@ -46,7 +46,7 @@ function useCounter(target: number, duration = 2000) {
 const stats = [
     { target: 20, suffix: '+', label: 'Años' },
     { target: 5000, suffix: '+', label: 'Pacientes' },
-    { target: 5, suffix: '', label: 'Profesionales' },
+    { target: 8, suffix: '', label: 'Especialidades' },
 ];
 
 function AnimatedStat({ target, suffix, label }: { target: number; suffix: string; label: string }) {
@@ -149,9 +149,9 @@ export default function Hero() {
                         transition={{ duration: 0.8, delay: 0.6 }}
                         style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1.125rem', maxWidth: '640px', marginLeft: 'auto', marginRight: 'auto', marginBottom: '2.5rem', lineHeight: 1.7 }}
                     >
-                        Servicios especializados en ortodoncia, endodoncia, periodoncia,
-                        estética dental, cirugía bucal, implantes y prótesis.
-                        Más de 20 años transformando sonrisas.
+                        Endodoncia, periodoncia, cirugía, implantología oral, prótesis,
+                        estética dental, ortodoncia y ortopedia de los maxilares, odontopediatría.
+                        Más de dos décadas transformando sonrisas.
                     </motion.p>
 
                     <motion.div

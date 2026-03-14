@@ -6,14 +6,14 @@ import AnimatedSection from '../ui/AnimatedSection';
 const stats = [
     { icon: Clock, value: '20+', label: 'Años de experiencia', color: '#5EC4C6' },
     { icon: Users, value: '5000+', label: 'Pacientes atendidos', color: '#C8A96E' },
-    { icon: Award, value: '5', label: 'Especialidades', color: '#5EC4C6' },
+    { icon: Award, value: '8', label: 'Especialidades', color: '#5EC4C6' },
     { icon: Heart, value: '100%', label: 'Dedicación', color: '#C8A96E' },
 ];
 
 const highlights = [
-    'Tecnología de vanguardia en cada tratamiento',
-    'Equipo de profesionales altamente capacitados',
-    'Ambiente cálido y confortable para el paciente',
+    'Sin derivaciones externas: todo en un solo lugar',
+    'Un solo equipo con visión global de tu tratamiento',
+    'Sinergia real entre especialistas',
     'Más de dos décadas de trayectoria y confianza',
 ];
 
@@ -26,17 +26,16 @@ export default function About() {
             <div style={{ maxWidth: '1024px', marginLeft: 'auto', marginRight: 'auto', paddingLeft: '1.5rem', paddingRight: '1.5rem', textAlign: 'center' }}>
                 <SectionHeading
                     label="Sobre Nosotros"
-                    title="Un enfoque personalizado para la sonrisa perfecta"
-                    subtitle="Consultorios Condas es un centro odontológico de confianza con más de 20 años de trayectoria. Ofrecemos el mejor servicio con profesionales altamente capacitados y tecnología de vanguardia."
+                    title="Tu tratamiento comienza y termina acá"
+                    subtitle="En CONDAS entendemos que tu salud bucal no puede esperar. Con más de dos décadas de trayectoria, nos hemos consolidado como un centro de referencia donde la experiencia y la tecnología se unen para cuidar de vos y de tu familia."
                 />
 
                 {/* Centered paragraph */}
                 <AnimatedSection>
                     <p className="text-text-secondary"
                         style={{ fontSize: '1.125rem', lineHeight: 1.75, maxWidth: '720px', marginLeft: 'auto', marginRight: 'auto', marginBottom: '4rem' }}>
-                        Nuestra misión es que cada paciente se sienta seguro para dar su mejor sonrisa.
-                        Combinamos experiencia, calidez humana e innovación para brindarte una experiencia
-                        odontológica única y de primer nivel.
+                        Creemos que la Rehabilitación Oral de alta complejidad solo es posible cuando existe una sinergia real entre especialistas.
+                        Nuestro mayor diferencial es tu tranquilidad: acá no existen las derivaciones externas. Desde la primera consulta hasta la rehabilitación más compleja o la atención dedicada de los más pequeños, todo sucede en nuestras instalaciones.
                     </p>
                 </AnimatedSection>
 

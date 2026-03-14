@@ -6,6 +6,8 @@ import {
     Sparkles,
     Crosshair,
     Gem,
+    Anchor,
+    Baby,
     type LucideIcon,
 } from 'lucide-react';
 import SectionHeading from '../ui/SectionHeading';
@@ -18,6 +20,8 @@ const iconMap: Record<string, LucideIcon> = {
     Sparkles,
     Crosshair,
     Gem,
+    Anchor,
+    Baby,
 };
 
 const containerVariants = {
@@ -41,8 +45,8 @@ export default function Services() {
             <div style={{ maxWidth: '1024px', marginLeft: 'auto', marginRight: 'auto', paddingLeft: '1.5rem', paddingRight: '1.5rem' }}>
                 <SectionHeading
                     label="Nuestros Servicios"
-                    title="Servicios especializados para tu sonrisa"
-                    subtitle="Contamos con profesionales altamente capacitados en cada área de la odontología moderna."
+                    title="Todas las especialidades, un solo equipo"
+                    subtitle="Creemos que la Rehabilitación Oral de alta complejidad solo es posible cuando existe una sinergia real entre especialistas. Tu tratamiento comienza y termina acá."
                 />
 
                 <motion.div
@@ -85,16 +89,6 @@ export default function Services() {
                                         style={{ fontSize: '0.875rem', lineHeight: 1.7, marginBottom: '2rem' }}>
                                         {service.description}
                                     </p>
-                                    <span className="font-semibold inline-flex items-center
-                    group-hover:gap-3 transition-all duration-300 cursor-pointer"
-                                        style={{ fontSize: '0.875rem', gap: '0.375rem', color: index % 2 === 0 ? '#5EC4C6' : '#C8A96E' }}>
-                                        Conocer más
-                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                            className="transition-transform duration-300 group-hover:translate-x-1">
-                                            <path d="M6 12L10 8L6 4" stroke="currentColor" strokeWidth="2"
-                                                strokeLinecap="round" strokeLinejoin="round" />
-                                        </svg>
-                                    </span>
                                 </div>
                             </motion.div>
                         );

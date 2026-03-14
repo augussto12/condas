@@ -7,13 +7,6 @@ export interface Service {
 
 export const SERVICES: Service[] = [
     {
-        id: 'ortodoncia',
-        title: 'Ortodoncia',
-        description:
-            'Corregimos la posición de tus dientes con las técnicas más avanzadas. Brackets estéticos, metálicos y alineadores invisibles para una sonrisa perfecta.',
-        icon: 'GitBranch',
-    },
-    {
         id: 'endodoncia',
         title: 'Endodoncia',
         description:
@@ -28,18 +21,18 @@ export const SERVICES: Service[] = [
         icon: 'Shield',
     },
     {
-        id: 'estetica',
-        title: 'Estética Dental',
+        id: 'cirugia',
+        title: 'Cirugía',
         description:
-            'Blanqueamiento profesional, carillas de porcelana y diseño de sonrisa personalizado. Transformamos tu sonrisa en tu mejor carta de presentación.',
-        icon: 'Sparkles',
+            'Cirugías bucales con máxima precisión y seguridad. Procedimientos quirúrgicos realizados por especialistas en nuestras instalaciones.',
+        icon: 'Crosshair',
     },
     {
-        id: 'cirugia',
-        title: 'Cirugías e Implantes',
+        id: 'implantologia',
+        title: 'Implantología Oral',
         description:
-            'Implantes dentales de titanio y cirugías bucales con máxima precisión. Recuperá la funcionalidad y estética con soluciones permanentes.',
-        icon: 'Crosshair',
+            'Implantes dentales de titanio con máxima precisión. Recuperá la funcionalidad y estética con soluciones permanentes.',
+        icon: 'Anchor',
     },
     {
         id: 'protesis',
@@ -47,5 +40,26 @@ export const SERVICES: Service[] = [
         description:
             'Prótesis fijas y removibles diseñadas a medida. Devolvemos la naturalidad a tu sonrisa con materiales de primera calidad.',
         icon: 'Gem',
+    },
+    {
+        id: 'estetica',
+        title: 'Estética Dental',
+        description:
+            'Blanqueamiento profesional, carillas de porcelana y diseño de sonrisa personalizado. Transformamos tu sonrisa en tu mejor carta de presentación.',
+        icon: 'Sparkles',
+    },
+    {
+        id: 'ortodoncia',
+        title: 'Ortodoncia y Ortopedia',
+        description:
+            'Corregimos la posición de tus dientes y los maxilares con las técnicas más avanzadas. Brackets estéticos, metálicos y alineadores invisibles.',
+        icon: 'GitBranch',
+    },
+    {
+        id: 'odontopediatria',
+        title: 'Odontopediatría',
+        description:
+            'Atención dedicada para los más pequeños en un ambiente cálido y amigable. Cuidamos la salud bucal de tus hijos desde temprana edad.',
+        icon: 'Baby',
     },
 ];

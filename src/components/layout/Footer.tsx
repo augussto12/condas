@@ -22,8 +22,8 @@ export default function Footer() {
                             />
                         </div>
                         <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.875rem', lineHeight: 1.7 }}>
-                            Centro Odontológico de excelencia. Tu sonrisa habla de vos.
-                            Más de 20 años transformando sonrisas con tecnología de vanguardia.
+                            Centro de referencia en rehabilitación oral. Más de dos décadas de trayectoria.
+                            Un solo equipo, una visión global y la comodidad de no tener que trasladarte.
                         </p>
                     </div>
 

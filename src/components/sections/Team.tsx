@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { ArrowUpRight } from 'lucide-react';
 import SectionHeading from '../ui/SectionHeading';
 import { TEAM_MEMBERS } from '../../constants/team';
 
@@ -107,6 +106,7 @@ function TeamCard({ member, gradient, accent }: {
                 <span className="rounded-full"
                     style={{
                         display: 'inline-block', width: 'fit-content',
+                        maxWidth: 'calc(100% - 6rem)',
                         padding: '0.375rem 1rem', fontSize: '0.75rem', fontWeight: 600,
                         letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '1.25rem',
                         backgroundColor: `${accent}15`, color: accent,
@@ -121,12 +121,6 @@ function TeamCard({ member, gradient, accent }: {
                 <p className="text-text-secondary" style={{ fontSize: '0.875rem', lineHeight: 1.7, marginBottom: '1.5rem' }}>
                     {member.bio}
                 </p>
-
-                <div className="font-semibold group-hover:gap-3 transition-all duration-300 cursor-pointer"
-                    style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem', color: accent }}>
-                    Conocer más
-                    <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                </div>
             </div>
         </div>
     );
