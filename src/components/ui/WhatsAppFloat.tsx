@@ -11,6 +11,7 @@ export default function WhatsAppFloat() {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 2, type: 'spring', stiffness: 200 }}
             aria-label="Contactar por WhatsApp"
+            className="whatsapp-float"
             style={{
                 position: 'fixed',
                 bottom: '2rem',
@@ -52,6 +53,18 @@ export default function WhatsAppFloat() {
         @keyframes whatsapp-pulse {
           0% { transform: scale(1); opacity: 1; }
           100% { transform: scale(1.4); opacity: 0; }
+        }
+        @media (max-width: 768px) {
+          .whatsapp-float {
+            bottom: 1rem !important;
+            right: 1rem !important;
+            width: 3.5rem !important;
+            height: 3.5rem !important;
+          }
+          .whatsapp-float svg {
+            width: 1.75rem !important;
+            height: 1.75rem !important;
+          }
         }
       `}</style>
         </motion.a>

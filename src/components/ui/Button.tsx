@@ -13,7 +13,7 @@ const variantClasses: Record<string, string> = {
     secondary:
         'bg-gold text-white hover:bg-gold-dark shadow-lg shadow-gold/25 hover:shadow-gold/40',
     outline:
-        'border-2 border-white text-white hover:bg-white hover:text-primary',
+        'border-2 border-white text-white hover:bg-accent hover:border-accent hover:text-white',
     ghost:
         'text-accent hover:bg-accent/10',
 };
@@ -49,4 +49,3 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
 Button.displayName = 'Button';
 export default Button;
-

@@ -39,8 +39,8 @@ const itemVariants = {
 export default function Services() {
     return (
         <section id="servicios" style={{
-            paddingTop: '8rem', paddingBottom: '8rem',
-            background: 'linear-gradient(180deg, #ffffff 0%, #F0F9F9 50%, #F8FAFB 100%)',
+            paddingTop: '6rem', paddingBottom: '6rem',
+            background: '#ffffff',
         }}>
             <div style={{ maxWidth: '1024px', marginLeft: 'auto', marginRight: 'auto', paddingLeft: '1.5rem', paddingRight: '1.5rem' }}>
                 <SectionHeading
@@ -55,7 +55,7 @@ export default function Services() {
                     whileInView="visible"
                     viewport={{ once: true, margin: '-60px' }}
                     className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-                    style={{ gap: '2rem' }}
+                    style={{ gap: '1.5rem' }}
                 >
                     {SERVICES.map((service, index) => {
                         const Icon = iconMap[service.icon];
@@ -64,31 +64,44 @@ export default function Services() {
                         return (
                             <motion.div key={service.id} variants={itemVariants}>
                                 <div className="group bg-white rounded-2xl border border-surface-dark h-full
-                  shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                  transition-all duration-300"
                                     style={{
-                                        padding: '2.5rem', textAlign: 'left',
+                                        padding: '2rem', textAlign: 'left',
                                         borderTop: `3px solid ${borderColors[index % borderColors.length]}`,
+                                        boxShadow: '0 1px 3px rgba(11,29,58,0.06)',
                                     }}>
-                                    <div className="rounded-2xl flex items-center justify-center
-                    group-hover:scale-110 transition-all duration-300"
-                                        style={{
-                                            width: '4rem', height: '4rem', marginBottom: '2rem',
-                                            backgroundColor: index % 2 === 0 ? 'rgba(94,196,198,0.12)' : 'rgba(200,169,110,0.12)',
-                                        }}>
-                                        <Icon
-                                            size={28}
-                                            className="transition-colors duration-300"
-                                            style={{ color: index % 2 === 0 ? '#5EC4C6' : '#C8A96E' }}
-                                        />
+
+                                    <style>{`
+                                        .service-card:hover {
+                                            transform: translateY(-4px);
+                                            box-shadow: 0 12px 32px rgba(11,29,58,0.1) !important;
+                                        }
+                                    `}</style>
+
+                                    <div className="service-card" style={{
+                                        transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                                    }}>
+                                        <div className="rounded-2xl flex items-center justify-center
+                     group-hover:scale-110 transition-all duration-300"
+                                            style={{
+                                                width: '3.5rem', height: '3.5rem', marginBottom: '1.5rem',
+                                                backgroundColor: index % 2 === 0 ? 'rgba(94,196,198,0.12)' : 'rgba(200,169,110,0.12)',
+                                            }}>
+                                            <Icon
+                                                size={24}
+                                                className="transition-colors duration-300"
+                                                style={{ color: index % 2 === 0 ? '#5EC4C6' : '#C8A96E' }}
+                                            />
+                                        </div>
+                                        <h3 className="font-serif font-bold text-primary"
+                                            style={{ fontSize: '1.125rem', marginBottom: '0.75rem' }}>
+                                            {service.title}
+                                        </h3>
+                                        <p className="text-text-secondary"
+                                            style={{ fontSize: '0.85rem', lineHeight: 1.7 }}>
+                                            {service.description}
+                                        </p>
                                     </div>
-                                    <h3 className="font-serif font-bold text-primary"
-                                        style={{ fontSize: '1.25rem', marginBottom: '1rem' }}>
-                                        {service.title}
-                                    </h3>
-                                    <p className="text-text-secondary"
-                                        style={{ fontSize: '0.875rem', lineHeight: 1.7, marginBottom: '2rem' }}>
-                                        {service.description}
-                                    </p>
                                 </div>
                             </motion.div>
                         );

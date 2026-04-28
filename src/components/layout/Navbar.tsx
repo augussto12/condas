@@ -14,6 +14,16 @@ export default function Navbar() {
         return () => window.removeEventListener('scroll', onScroll);
     }, []);
 
+    // Lock body scroll when mobile menu is open
+    useEffect(() => {
+        if (mobileOpen) {
+            document.body.classList.add('menu-open');
+        } else {
+            document.body.classList.remove('menu-open');
+        }
+        return () => document.body.classList.remove('menu-open');
+    }, [mobileOpen]);
+
     const handleNavClick = (href: string) => {
         setMobileOpen(false);
         const el = document.querySelector(href);
@@ -50,6 +60,7 @@ export default function Navbar() {
                             <img
                                 src={logoSrc}
                                 alt="Consultorios Condas"
+                                className="navbar-logo"
                                 style={{
                                     height: '3.5rem',
                                     width: 'auto',
@@ -60,7 +71,7 @@ export default function Navbar() {
                         </a>
 
                         {/* Desktop Nav */}
-                        <nav className="hidden lg:flex items-center" style={{ gap: '0.25rem' }}>
+                        <nav className="hidden md:flex items-center" style={{ gap: '0.25rem' }}>
                             {NAV_LINKS.map((link) => (
                                 <a
                                     key={link.href}
@@ -70,7 +81,7 @@ export default function Navbar() {
                                         ? 'text-primary/70 hover:text-primary hover:bg-primary/5'
                                         : 'text-white/80 hover:text-white hover:bg-white/10'
                                         }`}
-                                    style={{ padding: '0.5rem 1rem', fontSize: '0.875rem' }}
+                                    style={{ padding: '0.5rem 0.75rem', fontSize: '0.85rem' }}
                                 >
                                     {link.label}
                                 </a>
@@ -81,9 +92,9 @@ export default function Navbar() {
                                 rel="noopener noreferrer"
                                 className="bg-accent text-white font-semibold rounded-full hover:bg-accent-dark
                   transition-all duration-300 shadow-lg shadow-accent/25 hover:shadow-accent/40"
-                                style={{ marginLeft: '1rem', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.75rem 1.75rem', fontSize: '0.875rem' }}
+                                style={{ marginLeft: '0.75rem', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.625rem 1.5rem', fontSize: '0.85rem' }}
                             >
-                                <Phone size={16} />
+                                <Phone size={15} />
                                 Contactar
                             </a>
                         </nav>
@@ -91,7 +102,7 @@ export default function Navbar() {
                         {/* Mobile Toggle */}
                         <button
                             onClick={() => setMobileOpen(!mobileOpen)}
-                            className={`lg:hidden rounded-lg transition-colors ${scrolled ? 'text-primary hover:bg-primary/5' : 'text-white hover:bg-white/10'
+                            className={`md:hidden rounded-lg transition-colors cursor-pointer ${scrolled ? 'text-primary hover:bg-primary/5' : 'text-white hover:bg-white/10'
                                 }`}
                             style={{ padding: '0.5rem' }}
                             aria-label="Toggle menu"
@@ -110,7 +121,7 @@ export default function Navbar() {
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: '100%' }}
                         transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                        className="fixed inset-0 z-40 lg:hidden"
+                        className="fixed inset-0 z-40 md:hidden"
                     >
                         <div
                             className="absolute inset-0 bg-black/50 backdrop-blur-sm"
@@ -126,7 +137,7 @@ export default function Navbar() {
                                         onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
                                         className="text-white/80 hover:text-white hover:bg-white/10
                       rounded-xl font-medium transition-all duration-200"
-                                        style={{ padding: '0.75rem 1rem' }}
+                                        style={{ padding: '0.75rem 1rem', minHeight: '44px', display: 'flex', alignItems: 'center' }}
                                     >
                                         {link.label}
                                     </a>
@@ -136,7 +147,7 @@ export default function Navbar() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="bg-accent text-white font-semibold rounded-full hover:bg-accent-dark transition-all duration-300"
-                                    style={{ marginTop: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', padding: '0.75rem 1.5rem' }}
+                                    style={{ marginTop: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', padding: '0.75rem 1.5rem', minHeight: '44px' }}
                                 >
                                     <Phone size={16} />
                                     Contactar
@@ -146,6 +157,15 @@ export default function Navbar() {
                     </motion.div>
                 )}
             </AnimatePresence>
+
+            {/* Responsive logo */}
+            <style>{`
+                @media (max-width: 380px) {
+                    .navbar-logo {
+                        height: 2.5rem !important;
+                    }
+                }
+            `}</style>
         </>
     );
 }

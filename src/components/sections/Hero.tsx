@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Users } from 'lucide-react';
 import Button from '../ui/Button';
 
 // Animated counter hook
@@ -53,10 +53,10 @@ function AnimatedStat({ target, suffix, label }: { target: number; suffix: strin
     const { count, ref } = useCounter(target, target > 100 ? 2500 : 1500);
     return (
         <div ref={ref} style={{ textAlign: 'center' }}>
-            <div className="font-bold text-accent" style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)' }}>
+            <div className="font-bold text-accent" style={{ fontSize: 'clamp(1.25rem, 3vw, 2rem)' }}>
                 {count}{suffix}
             </div>
-            <div style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem', marginTop: '0.25rem' }}>{label}</div>
+            <div style={{ color: 'rgba(255,255,255,0.5)', fontSize: 'clamp(0.7rem, 2vw, 0.875rem)', marginTop: '0.25rem' }}>{label}</div>
         </div>
     );
 }
@@ -83,6 +83,7 @@ export default function Hero() {
             ref={sectionRef}
             id="inicio"
             className="relative min-h-screen flex items-center justify-center overflow-hidden"
+            style={{ paddingTop: '5rem' }}
         >
             {/* Parallax background layer */}
             <motion.div
@@ -124,7 +125,7 @@ export default function Hero() {
                     >
                         <span className="text-accent" style={{
                             display: 'inline-block', padding: '0.375rem 1rem', borderRadius: '9999px',
-                            backgroundColor: 'rgba(94,196,198,0.15)', fontSize: '0.875rem', fontWeight: 500,
+                            backgroundColor: 'rgba(94,196,198,0.15)', fontSize: 'clamp(0.7rem, 2vw, 0.875rem)', fontWeight: 500,
                             marginBottom: '1.5rem', letterSpacing: '0.05em', textTransform: 'uppercase',
                         }}>
                             Centro Odontológico de Excelencia
@@ -136,7 +137,7 @@ export default function Hero() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
                         className="font-serif font-bold text-white"
-                        style={{ fontSize: 'clamp(2.25rem, 6vw, 4.5rem)', lineHeight: 1.1, marginBottom: '1.5rem' }}
+                        style={{ fontSize: 'clamp(2rem, 8vw, 4rem)', lineHeight: 1.1, marginBottom: '1.5rem' }}
                     >
                         Tu Sonrisa
                         <br />
@@ -147,7 +148,8 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 40 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.6 }}
-                        style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1.125rem', maxWidth: '640px', marginLeft: 'auto', marginRight: 'auto', marginBottom: '2.5rem', lineHeight: 1.7 }}
+                        className="hero-subtitle"
+                        style={{ color: 'rgba(255,255,255,0.7)', fontSize: 'clamp(0.9rem, 2.5vw, 1.125rem)', maxWidth: '640px', marginLeft: 'auto', marginRight: 'auto', marginBottom: '2.5rem', lineHeight: 1.7 }}
                     >
                         Endodoncia, periodoncia, cirugía, implantología oral, prótesis,
                         estética dental, ortodoncia y ortopedia de los maxilares, odontopediatría.
@@ -158,13 +160,15 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 40 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.8 }}
-                        style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center' }}
+                        className="hero-buttons"
+                        style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', justifyContent: 'center' }}
                     >
                         <Button
                             size="lg"
-                            onClick={() => scrollTo('#turnos')}
+                            onClick={() => scrollTo('#equipo')}
                         >
-                            Pedir Turno
+                            <Users size={18} />
+                            Nuestros Profesionales
                         </Button>
                         <Button
                             variant="outline"
@@ -181,7 +185,7 @@ export default function Hero() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 1 }}
                         className="grid grid-cols-3"
-                        style={{ marginTop: '5rem', gap: '2rem', maxWidth: '28rem', marginLeft: 'auto', marginRight: 'auto' }}
+                        style={{ marginTop: '4rem', gap: 'clamp(1rem, 3vw, 2rem)', maxWidth: '28rem', marginLeft: 'auto', marginRight: 'auto' }}
                     >
                         {stats.map((stat) => (
                             <AnimatedStat key={stat.label} {...stat} />
@@ -209,6 +213,26 @@ export default function Hero() {
                     <ChevronDown size={28} />
                 </motion.button>
             </motion.div>
+
+            {/* Responsive hero styles */}
+            <style>{`
+                .hero-buttons button {
+                    font-size: 0.9rem !important;
+                    padding: 0.7rem 1.25rem !important;
+                }
+                @media (max-width: 480px) {
+                    .hero-buttons {
+                        flex-direction: column !important;
+                        align-items: center;
+                    }
+                    .hero-buttons button {
+                        width: 100%;
+                        max-width: 240px;
+                        font-size: 0.85rem !important;
+                        padding: 0.65rem 1rem !important;
+                    }
+                }
+            `}</style>
         </section>
     );
 }
