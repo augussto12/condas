@@ -4,9 +4,9 @@
 import imgSecretarias from '../assets/profesionales/DSC_1413.jpg';
 import imgGrupal1 from '../assets/profesionales/DSC_1443.jpg';
 import imgGrupal2 from '../assets/profesionales/DSC_1456.jpg';
-import imgGrupal3 from '../assets/profesionales/DSC_1471.jpg';
+// import imgGrupal3 from '../assets/profesionales/DSC_1471.jpg';
 import imgConsultorio1 from '../assets/profesionales/DSC_1493.jpg';
-import imgConsultorio2 from '../assets/profesionales/DSC_1541.jpg';
+// import imgConsultorio2 from '../assets/profesionales/DSC_1541.jpg';
 import imgDuo from '../assets/profesionales/DSC_1552.jpg';
 import imgAccion from '../assets/profesionales/DSC_1560.jpg';
 
