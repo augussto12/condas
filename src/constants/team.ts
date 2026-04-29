@@ -36,7 +36,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
         id: 'juan-pablo',
         name: 'Dr. Juan Pablo',
         role: 'Odontólogo',
-        specialty: 'Periodoncia',
+        specialty: 'Ortodoncia',
         bio: 'Especialista en salud gingival y regeneración ósea. Comprometido con la salud integral de cada paciente.',
         image: '/team/juan-pablo.jpg',
     },

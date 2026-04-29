@@ -17,31 +17,32 @@ export default function SectionDivider({
 }: SectionDividerProps) {
     return (
         <div
-            className={`section-divider w-full overflow-hidden leading-[0] ${flip ? 'rotate-180' : ''} ${className}`}
+            className={`section-divider w-full overflow-hidden leading-none flex flex-col ${flip ? 'rotate-180' : ''} ${className}`}
             style={{
-                backgroundColor: bgColor,
-                marginTop: '-2px',
-                marginBottom: '-2px',
                 position: 'relative',
-                zIndex: 2,
+                zIndex: 10,
+                backgroundColor: bgColor,
+                marginTop: '-1px',
+                marginBottom: '-1px',
             }}
             aria-hidden="true"
         >
             <svg
                 viewBox="0 0 1440 80"
                 xmlns="http://www.w3.org/2000/svg"
-                className="section-divider-svg"
-                style={{ width: '100%', display: 'block' }}
+                className="section-divider-svg block w-full"
                 preserveAspectRatio="none"
+                style={{ shapeRendering: 'geometricPrecision' }}
             >
-                {/* Full background rect matching previous section */}
-                <rect x="0" y="0" width="1440" height="80" fill={bgColor} />
-                {/* Wave fill matching next section, painted on top */}
+                {/* No <rect> needed, wrapper background handles the top part */}
                 <path
                     d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,40 L1440,80 L0,80 Z"
                     fill={fillColor}
                 />
             </svg>
+            
+            {/* 2px strip to guarantee no subpixel gaps at the very bottom overlapping the next section */}
+            <div style={{ height: '2px', backgroundColor: fillColor, width: '100%' }} />
 
             <style>{`
                 .section-divider-svg {

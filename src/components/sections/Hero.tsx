@@ -117,7 +117,7 @@ export default function Hero() {
                 style={{ y: contentY, opacity }}
                 className="relative z-10"
             >
-                <div style={{ maxWidth: '896px', marginLeft: 'auto', marginRight: 'auto', paddingLeft: '1.5rem', paddingRight: '1.5rem', textAlign: 'center' }}>
+                <div className="hero-main-content" style={{ maxWidth: '896px', marginLeft: 'auto', marginRight: 'auto', paddingLeft: '1.5rem', paddingRight: '1.5rem', textAlign: 'center' }}>
                     <motion.div
                         initial={{ opacity: 0, y: 40 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -184,7 +184,7 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 40 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 1 }}
-                        className="grid grid-cols-3"
+                        className="grid grid-cols-3 hero-stats"
                         style={{ marginTop: '4rem', gap: 'clamp(1rem, 3vw, 2rem)', maxWidth: '28rem', marginLeft: 'auto', marginRight: 'auto' }}
                     >
                         {stats.map((stat) => (
@@ -220,6 +220,18 @@ export default function Hero() {
                     font-size: 0.9rem !important;
                     padding: 0.7rem 1.25rem !important;
                 }
+                @media (max-width: 768px) {
+                    .hero-subtitle {
+                        margin-bottom: 1.5rem !important;
+                    }
+                    .hero-buttons button {
+                        font-size: 0.8rem !important;
+                        padding: 0.55rem 1rem !important;
+                    }
+                    .hero-stats {
+                        margin-top: 2rem !important;
+                    }
+                }
                 @media (max-width: 480px) {
                     .hero-buttons {
                         flex-direction: column !important;
@@ -227,9 +239,19 @@ export default function Hero() {
                     }
                     .hero-buttons button {
                         width: 100%;
-                        max-width: 240px;
+                        max-width: 220px;
+                        font-size: 0.78rem !important;
+                        padding: 0.5rem 0.875rem !important;
+                    }
+                    .hero-subtitle {
+                        margin-bottom: 1.25rem !important;
                         font-size: 0.85rem !important;
-                        padding: 0.65rem 1rem !important;
+                    }
+                    .hero-stats {
+                        margin-top: 1.5rem !important;
+                    }
+                    .hero-main-content {
+                        margin-top: -4rem !important;
                     }
                 }
             `}</style>

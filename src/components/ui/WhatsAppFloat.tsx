@@ -41,29 +41,38 @@ export default function WhatsAppFloat() {
             </svg>
 
             {/* Pulse ring animation */}
-            <span style={{
-                position: 'absolute',
-                inset: '-4px',
-                borderRadius: '50%',
-                border: '2px solid rgba(37, 211, 102, 0.4)',
-                animation: 'whatsapp-pulse 2s ease-out infinite',
-            }} />
+            <span 
+                className="whatsapp-pulse-ring"
+                style={{
+                    position: 'absolute',
+                    inset: '-4px',
+                    borderRadius: '50%',
+                    border: '2px solid rgba(37, 211, 102, 0.4)',
+                    animation: 'whatsapp-pulse 2s ease-out infinite',
+                }} 
+            />
 
             <style>{`
         @keyframes whatsapp-pulse {
           0% { transform: scale(1); opacity: 1; }
           100% { transform: scale(1.4); opacity: 0; }
         }
+        body.menu-open .whatsapp-float {
+            display: none !important;
+        }
         @media (max-width: 768px) {
           .whatsapp-float {
             bottom: 1rem !important;
             right: 1rem !important;
-            width: 3.5rem !important;
-            height: 3.5rem !important;
+            width: 2.75rem !important;
+            height: 2.75rem !important;
           }
           .whatsapp-float svg {
-            width: 1.75rem !important;
-            height: 1.75rem !important;
+            width: 1.5rem !important;
+            height: 1.5rem !important;
+          }
+          .whatsapp-pulse-ring {
+            display: none !important;
           }
         }
       `}</style>

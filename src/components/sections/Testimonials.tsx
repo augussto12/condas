@@ -8,24 +8,30 @@ import { TESTIMONIALS } from '../../constants/testimonials';
 export default function Testimonials() {
     const [current, setCurrent] = useState(0);
     const [direction, setDirection] = useState(1);
+    const [lastInteraction, setLastInteraction] = useState(Date.now());
     const total = TESTIMONIALS.length;
     const touchStart = useRef<number | null>(null);
 
     const next = useCallback(() => {
         setDirection(1);
         setCurrent((c) => (c + 1) % total);
+        setLastInteraction(Date.now());
     }, [total]);
 
     const prev = useCallback(() => {
         setDirection(-1);
         setCurrent((c) => (c - 1 + total) % total);
+        setLastInteraction(Date.now());
     }, [total]);
 
-    // Auto-advance every 5s
+    // Auto-advance every 10s
     useEffect(() => {
-        const timer = setInterval(next, 5000);
+        const timer = setInterval(() => {
+            setDirection(1);
+            setCurrent((c) => (c + 1) % total);
+        }, 10000);
         return () => clearInterval(timer);
-    }, [next]);
+    }, [lastInteraction, total]);
 
     const testimonial = TESTIMONIALS[current];
 
@@ -50,7 +56,7 @@ export default function Testimonials() {
                 <SectionHeading
                     label="Testimonios & Referencias"
                     title="Cambiando vidas, una sonrisa a la vez"
-                    subtitle="Historias reales de pacientes que confiaron en nosotros para transformar su sonrisa."
+                    subtitle="Historias reales de pacientes que confiaron en nosotros para transform su sonrisa."
                 />
 
                 {/* Carousel container */}
@@ -143,57 +149,59 @@ export default function Testimonials() {
                         </AnimatePresence>
                     </div>
 
-                    {/* Mobile arrows — below the card */}
-                    <div className="testimonial-arrows-mobile" style={{
-                        display: 'none',
-                        justifyContent: 'center',
-                        gap: '1rem',
-                        marginTop: '1rem',
-                    }}>
+                    {/* Dots indicator with mobile arrows */}
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', marginTop: '1.5rem' }}>
+                        {/* Mobile Prev Arrow */}
                         <button
                             onClick={prev}
-                            className="bg-white hover:bg-accent hover:text-white text-primary transition-all duration-300 shadow-md rounded-full cursor-pointer"
+                            className="bg-white hover:bg-accent hover:text-white text-primary transition-all duration-300 shadow-sm rounded-full cursor-pointer testimonial-mobile-arrow"
                             style={{
-                                width: '2.75rem', height: '2.75rem',
-                                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                width: '2.25rem', height: '2.25rem',
+                                display: 'none', alignItems: 'center', justifyContent: 'center',
                                 border: '1px solid #EDF1F3',
                             }}
                             aria-label="Anterior"
                         >
-                            <ChevronLeft size={18} />
+                            <ChevronLeft size={16} />
                         </button>
+
+                        {/* Dots */}
+                        <div style={{ display: 'flex', gap: '0.5rem' }}>
+                            {TESTIMONIALS.map((_, i) => (
+                                <button
+                                    key={i}
+                                    onClick={() => { 
+                                        setDirection(i > current ? 1 : -1); 
+                                        setCurrent(i); 
+                                        setLastInteraction(Date.now());
+                                    }}
+                                    className="transition-all duration-300 cursor-pointer"
+                                    style={{
+                                        width: i === current ? '2rem' : '0.5rem',
+                                        height: '0.5rem',
+                                        borderRadius: '9999px',
+                                        backgroundColor: i === current ? '#5EC4C6' : '#D1E0E0',
+                                        border: 'none',
+                                        padding: 0,
+                                    }}
+                                    aria-label={`Testimonio ${i + 1}`}
+                                />
+                            ))}
+                        </div>
+
+                        {/* Mobile Next Arrow */}
                         <button
                             onClick={next}
-                            className="bg-white hover:bg-accent hover:text-white text-primary transition-all duration-300 shadow-md rounded-full cursor-pointer"
+                            className="bg-white hover:bg-accent hover:text-white text-primary transition-all duration-300 shadow-sm rounded-full cursor-pointer testimonial-mobile-arrow"
                             style={{
-                                width: '2.75rem', height: '2.75rem',
-                                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                width: '2.25rem', height: '2.25rem',
+                                display: 'none', alignItems: 'center', justifyContent: 'center',
                                 border: '1px solid #EDF1F3',
                             }}
                             aria-label="Siguiente"
                         >
-                            <ChevronRight size={18} />
+                            <ChevronRight size={16} />
                         </button>
-                    </div>
-
-                    {/* Dots indicator */}
-                    <div style={{ display: 'flex', justifyContent: 'center', gap: '0.5rem', marginTop: '1.5rem' }}>
-                        {TESTIMONIALS.map((_, i) => (
-                            <button
-                                key={i}
-                                onClick={() => { setDirection(i > current ? 1 : -1); setCurrent(i); }}
-                                className="transition-all duration-300 cursor-pointer"
-                                style={{
-                                    width: i === current ? '2rem' : '0.5rem',
-                                    height: '0.5rem',
-                                    borderRadius: '9999px',
-                                    backgroundColor: i === current ? '#5EC4C6' : '#D1E0E0',
-                                    border: 'none',
-                                    padding: 0,
-                                }}
-                                aria-label={`Testimonio ${i + 1}`}
-                            />
-                        ))}
                     </div>
                 </div>
             </div>
@@ -216,11 +224,11 @@ export default function Testimonials() {
                 }
 
                 @media (max-width: 645px) {
-                    /* Hide absolute-positioned arrows, show row below card */
+                    /* Hide absolute-positioned arrows, show inline mobile arrows */
                     .testimonial-arrow {
                         display: none !important;
                     }
-                    .testimonial-arrows-mobile {
+                    .testimonial-mobile-arrow {
                         display: flex !important;
                     }
                     .testimonial-card { padding: 1.5rem !important; }
