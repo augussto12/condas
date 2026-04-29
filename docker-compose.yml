@@ -1,0 +1,13 @@
+services:
+  condas-frontend:
+    build: .
+    container_name: condas-frontend
+    restart: unless-stopped
+    expose:
+      - "80"
+    networks:
+      - nginx-proxy-manager_default
+
+networks:
+  nginx-proxy-manager_default:
+    external: true
