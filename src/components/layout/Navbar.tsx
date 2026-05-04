@@ -161,7 +161,7 @@ export default function Navbar() {
                             style={{
                                 width: '75%',
                                 maxWidth: '320px',
-                                background: 'linear-gradient(180deg, #0D1B3E 0%, #0a1628 100%)',
+                                background: 'linear-gradient(180deg, #10224A 0%, #0a1628 100%)',
                                 borderLeft: '3px solid #2DD4BF',
                                 boxShadow: '-10px 0 30px rgba(0,0,0,0.5)'
                             }}

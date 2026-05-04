@@ -13,7 +13,7 @@ import WhatsAppFloat from './components/ui/WhatsAppFloat';
   Section backgrounds (new rhythm):
   - Hero:         navy #0B1D3A
   - Services:     white #FFFFFF
-  - About:        navy #0D1B3E
+  - About:        navy #10224A
   - Team:         white #FFFFFF
   - Gallery:      gradient navy→teal
   - Testimonials: celeste #F0FAFA
@@ -32,17 +32,17 @@ function App() {
             <Services />
 
             {/* Services (white) → About (navy) */}
-            <SectionDivider fillColor="#0D1B3E" bgColor="#ffffff" />
+            <SectionDivider fillColor="#10224A" bgColor="#ffffff" />
 
             <About />
 
-            {/* About (navy) → Team (white) */}
-            <SectionDivider fillColor="#ffffff" bgColor="#0D1B3E" />
+            {/* About (gradient ends #1A4A6E) → Team (white) */}
+            <SectionDivider fillColor="#ffffff" bgColor="#1A4A6E" />
 
             <Team />
 
             {/* Team (white) → Gallery (navy gradient) */}
-            <SectionDivider fillColor="#0D1B3E" bgColor="#ffffff" />
+            <SectionDivider fillColor="#10224A" bgColor="#ffffff" />
 
             <Gallery />
 

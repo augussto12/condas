@@ -22,8 +22,8 @@ export default function SectionDivider({
                 position: 'relative',
                 zIndex: 10,
                 backgroundColor: bgColor,
-                marginTop: '-1px',
-                marginBottom: '-1px',
+                marginTop: '-2px',
+                marginBottom: '-2px',
             }}
             aria-hidden="true"
         >
@@ -41,8 +41,8 @@ export default function SectionDivider({
                 />
             </svg>
             
-            {/* 2px strip to guarantee no subpixel gaps at the very bottom overlapping the next section */}
-            <div style={{ height: '2px', backgroundColor: fillColor, width: '100%' }} />
+            {/* Solid strip to guarantee no subpixel gaps at the bottom, overlapping the next section */}
+            <div style={{ height: '6px', backgroundColor: fillColor, width: '100%', marginTop: '-1px', position: 'relative', zIndex: 2 }} />
 
             <style>{`
                 .section-divider-svg {

@@ -70,7 +70,7 @@ export default function Gallery() {
         <>
             <section id="galeria" style={{
                 paddingTop: '6rem', paddingBottom: '6rem',
-                background: 'linear-gradient(180deg, #0D1B3E 0%, #1A4A6E 100%)',
+                background: 'linear-gradient(180deg, #10224A 0%, #1A4A6E 100%)',
                 position: 'relative',
             }}>
                 {/* Subtle decorative elements */}

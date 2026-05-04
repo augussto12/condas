@@ -21,21 +21,21 @@ export default function About() {
     return (
         <section id="nosotros" style={{
             paddingTop: '6rem', paddingBottom: '6rem',
-            background: '#0D1B3E',
+            background: 'linear-gradient(180deg, #10224A 0%, #1A4A6E 100%)',
             position: 'relative',
         }}>
             {/* Subtle decorative elements */}
             <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', pointerEvents: 'none' }}>
                 <div style={{
-                    position: 'absolute', top: '-10%', right: '-5%',
+                    position: 'absolute', top: '15%', right: '-5%',
                     width: '400px', height: '400px',
-                    background: 'radial-gradient(circle, rgba(94,196,198,0.06) 0%, transparent 70%)',
+                    background: 'radial-gradient(circle, rgba(94,196,198,0.06) 0%, rgba(94,196,198,0) 70%)',
                     borderRadius: '50%',
                 }} />
                 <div style={{
-                    position: 'absolute', bottom: '-10%', left: '-5%',
+                    position: 'absolute', bottom: '15%', left: '-5%',
                     width: '300px', height: '300px',
-                    background: 'radial-gradient(circle, rgba(200,169,110,0.05) 0%, transparent 70%)',
+                    background: 'radial-gradient(circle, rgba(200,169,110,0.05) 0%, rgba(200,169,110,0) 70%)',
                     borderRadius: '50%',
                 }} />
             </div>
