@@ -1,3 +1,4 @@
+import SEO from './components/SEO';
 import Layout from './components/layout/Layout';
 import Hero from './components/sections/Hero';
 import Services from './components/sections/Services';
@@ -15,7 +16,7 @@ import WhatsAppFloat from './components/ui/WhatsAppFloat';
   - Services:     white #FFFFFF
   - About:        navy #10224A
   - Team:         white #FFFFFF
-  - Gallery:      gradient navy→teal
+  - Gallery:      gradient navyâ†’teal
   - Testimonials: celeste #F0FAFA
   - Map:          white #FFFFFF
   - Footer:       navy #0B1D3A
@@ -23,41 +24,44 @@ import WhatsAppFloat from './components/ui/WhatsAppFloat';
 
 function App() {
     return (
-        <Layout>
-            <Hero />
+        <>
+            <SEO />
+            <Layout>
+                <Hero />
 
-            {/* Hero (navy) → Services (white) */}
-            <SectionDivider fillColor="#ffffff" />
+                {/* Hero (navy) â†’ Services (white) */}
+                <SectionDivider fillColor="#ffffff" />
 
-            <Services />
+                <Services />
 
-            {/* Services (white) → About (navy) */}
-            <SectionDivider fillColor="#10224A" bgColor="#ffffff" />
+                {/* Services (white) â†’ About (navy) */}
+                <SectionDivider fillColor="#10224A" bgColor="#ffffff" />
 
-            <About />
+                <About />
 
-            {/* About (gradient ends #1A4A6E) → Team (white) */}
-            <SectionDivider fillColor="#ffffff" bgColor="#1A4A6E" />
+                {/* About (gradient ends #1A4A6E) â†’ Team (white) */}
+                <SectionDivider fillColor="#ffffff" bgColor="#1A4A6E" />
 
-            <Team />
+                <Team />
 
-            {/* Team (white) → Gallery (navy gradient) */}
-            <SectionDivider fillColor="#10224A" bgColor="#ffffff" />
+                {/* Team (white) â†’ Gallery (navy gradient) */}
+                <SectionDivider fillColor="#10224A" bgColor="#ffffff" />
 
-            <Gallery />
+                <Gallery />
 
-            {/* Gallery (ends ~#1A4A6E) → Testimonials (#F0FAFA) */}
-            <SectionDivider fillColor="#F0FAFA" bgColor="#1A4A6E" />
+                {/* Gallery (ends ~#1A4A6E) â†’ Testimonials (#F0FAFA) */}
+                <SectionDivider fillColor="#F0FAFA" bgColor="#1A4A6E" />
 
-            <Testimonials />
+                <Testimonials />
 
-            {/* Testimonials (#F0FAFA) → Map (white) */}
-            <SectionDivider fillColor="#ffffff" bgColor="#F0FAFA" />
+                {/* Testimonials (#F0FAFA) â†’ Map (white) */}
+                <SectionDivider fillColor="#ffffff" bgColor="#F0FAFA" />
 
-            <MapSection />
+                <MapSection />
 
-            <WhatsAppFloat />
-        </Layout>
+                <WhatsAppFloat />
+            </Layout>
+        </>
     );
 }
 
