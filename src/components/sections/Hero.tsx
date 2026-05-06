@@ -128,7 +128,7 @@ export default function Hero() {
                             backgroundColor: 'rgba(94,196,198,0.15)', fontSize: 'clamp(0.7rem, 2vw, 0.875rem)', fontWeight: 500,
                             marginBottom: '1.5rem', letterSpacing: '0.05em', textTransform: 'uppercase',
                         }}>
-                            Centro Odontológico de Excelencia
+                            Atención integral y personalizada
                         </span>
                     </motion.div>
 
@@ -151,9 +151,8 @@ export default function Hero() {
                         className="hero-subtitle"
                         style={{ color: 'rgba(255,255,255,0.7)', fontSize: 'clamp(0.9rem, 2.5vw, 1.125rem)', maxWidth: '640px', marginLeft: 'auto', marginRight: 'auto', marginBottom: '2.5rem', lineHeight: 1.7 }}
                     >
-                        Endodoncia, periodoncia, cirugía, implantología oral, prótesis,
-                        estética dental, ortodoncia y ortopedia de los maxilares, odontopediatría.
-                        Más de dos décadas transformando sonrisas.
+                        Un centro odontológico familiar donde cada tratamiento se piensa de forma integral,
+                        con especialistas que trabajan en equipo y tecnología digital al servicio de tu bienestar.
                     </motion.p>
 
                     <motion.div

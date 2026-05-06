@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ZoomIn, X } from 'lucide-react';
+import { MessageCircle, ZoomIn, X } from 'lucide-react';
 import SectionHeading from '../ui/SectionHeading';
 import { TEAM_MEMBERS } from '../../constants/team';
+import { CONTACT_INFO } from '../../constants/navigation';
 
 // Professional photos
 import imgMariaInes from '../../assets/profesionales/DSC_1498.jpg';
 import imgJuanPablo from '../../assets/profesionales/DSC_1512.jpg';
-import imgJulieta from '../../assets/profesionales/DSC_1530.jpg';
+import imgJulieta from '../../assets/profesionales/DSC_1541.jpg';
 import imgAugusto from '../../assets/profesionales/DSC_1545.jpg';
 import imgGrupal from '../../assets/profesionales/DSC_1479.jpg';
 import AnimatedSection from '../ui/AnimatedSection';
@@ -33,6 +34,13 @@ const itemVariants = {
 
 const accentColors = ['#5EC4C6', '#C8A96E', '#5EC4C6', '#C8A96E', '#5EC4C6'];
 
+function getProfessionalContactUrl(member: typeof TEAM_MEMBERS[number]) {
+    if (!member.whatsappPhone) return CONTACT_INFO.whatsapp;
+
+    const text = encodeURIComponent(`Hola, quiero consultar con ${member.name}.`);
+    return `https://api.whatsapp.com/send/?phone=${member.whatsappPhone}&text=${text}&type=phone_number&app_absent=0`;
+}
+
 export default function Team() {
     const [lightboxPhoto, setLightboxPhoto] = useState<string | null>(null);
 
@@ -45,8 +53,8 @@ export default function Team() {
             <div style={{ maxWidth: '1024px', marginLeft: 'auto', marginRight: 'auto', paddingLeft: '1.5rem', paddingRight: '1.5rem', textAlign: 'center' }}>
                 <SectionHeading
                     label="Nuestro Equipo"
-                    title="Conocé a nuestros profesionales"
-                    subtitle="Un equipo dedicado a transformar tu sonrisa con excelencia y calidez humana."
+                    title="Nuestro Equipo de Profesionales"
+                    subtitle="Cinco profesionales de la misma familia, unidos por una mirada integral de la odontología y el compromiso de cuidar cada sonrisa con excelencia."
                 />
 
                 {/* Group photo banner */}
@@ -268,6 +276,8 @@ function TeamCard({ member, accent, photo, onPhotoClick }: {
     photo?: string;
     onPhotoClick: (src: string) => void;
 }) {
+    const contactUrl = getProfessionalContactUrl(member);
+
     return (
         <div className="group rounded-2xl overflow-hidden h-full border border-surface-dark
             shadow-sm hover:shadow-xl transition-all duration-500"
@@ -380,9 +390,27 @@ function TeamCard({ member, accent, photo, onPhotoClick }: {
                     {member.role}
                 </p>
                 <p className="text-text-secondary"
-                    style={{ fontSize: '0.85rem', lineHeight: 1.7 }}>
+                    style={{ fontSize: '0.85rem', lineHeight: 1.7, marginBottom: '1.25rem' }}>
                     {member.bio}
                 </p>
+                <a
+                    href={contactUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 font-semibold rounded-full transition-all duration-300 hover:scale-[1.03] active:scale-[0.97]"
+                    style={{
+                        width: '100%',
+                        padding: '0.7rem 1rem',
+                        fontSize: '0.85rem',
+                        color: '#ffffff',
+                        backgroundColor: accent,
+                        boxShadow: `0 8px 20px ${accent}33`,
+                    }}
+                    aria-label={`Contactar a ${member.name} por WhatsApp`}
+                >
+                    <MessageCircle size={16} />
+                    Contactar
+                </a>
             </div>
         </div>
     );

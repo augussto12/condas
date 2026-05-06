@@ -89,9 +89,9 @@ export default function Gallery() {
                     position: 'relative', zIndex: 1,
                 }}>
                     <SectionHeading
-                        label="Nuestro Consultorio"
-                        title="Conocé nuestro espacio"
-                        subtitle="Un equipo comprometido trabajando en instalaciones de primer nivel para brindarte la mejor atención."
+                        label="Instalaciones"
+                        title="Innovación pensada para tu bienestar"
+                        subtitle="Queremos que tu paso por la clínica sea una experiencia totalmente superadora. Por eso, nuestras instalaciones combinan un diseño moderno con la última tecnología digital para tu confort y confianza. Contamos con 3 consultorios altamente equipados y un quirófano específico para cirugías de alta complejidad."
                         light
                     />
 

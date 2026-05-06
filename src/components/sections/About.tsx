@@ -11,10 +11,10 @@ const stats = [
 ];
 
 const highlights = [
-    'Sin derivaciones externas: todo en un solo lugar',
-    'Un solo equipo con visión global de tu tratamiento',
-    'Sinergia real entre especialistas',
-    'Más de dos décadas de trayectoria y confianza',
+    'Más de 20 años de trayectoria familiar',
+    'Cinco profesionales trabajando con una misma visión',
+    'Odontología integral con trato cercano',
+    'Un legado que cuidamos día a día',
 ];
 
 export default function About() {
@@ -47,8 +47,8 @@ export default function About() {
             }}>
                 <SectionHeading
                     label="Sobre Nosotros"
-                    title="Tu tratamiento comienza y termina acá"
-                    subtitle="En CONDAS entendemos que tu salud bucal no puede esperar. Con más de dos décadas de trayectoria, nos hemos consolidado como un centro de referencia donde la experiencia y la tecnología se unen para cuidar de vos y de tu familia."
+                    title="Nuestra historia, tu confianza"
+                    subtitle="Lo que comenzó hace más de 20 años como un proyecto pequeño, hoy es una realidad compartida por cinco profesionales de la misma familia."
                     light
                 />
 
@@ -59,8 +59,8 @@ export default function About() {
                         fontSize: '1.125rem', lineHeight: 1.75,
                         maxWidth: '720px', marginLeft: 'auto', marginRight: 'auto', marginBottom: '3.5rem',
                     }}>
-                        Creemos que la Rehabilitación Oral de alta complejidad solo es posible cuando existe una sinergia real entre especialistas.
-                        Nuestro mayor diferencial es tu tranquilidad: acá no existen las derivaciones externas. Desde la primera consulta hasta la rehabilitación más compleja o la atención dedicada de los más pequeños, todo sucede en nuestras instalaciones.
+                        Para nosotros, la odontología no es solo una profesión: es un legado que cuidamos día a día.
+                        Por eso combinamos experiencia, tecnología y una mirada integral para acompañarte con calidez en cada etapa de tu tratamiento.
                     </p>
                 </AnimatedSection>
 

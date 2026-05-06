@@ -44,7 +44,7 @@ export const GALLERY_IMAGES: GalleryImage[] = [
     {
         id: 'consultorio-1',
         src: imgConsultorio1,
-        alt: 'Tecnología al servicio de tu salud',
+        alt: 'Tecnología digital integrada al sillón odontológico',
         span: 'tall',
     },
     {
