@@ -35,10 +35,10 @@ const itemVariants = {
 const accentColors = ['#5EC4C6', '#C8A96E', '#5EC4C6', '#C8A96E', '#5EC4C6'];
 
 function getProfessionalContactUrl(member: typeof TEAM_MEMBERS[number]) {
-    if (!member.whatsappPhone) return CONTACT_INFO.whatsapp;
-
-    const text = encodeURIComponent(`Hola, quiero consultar con ${member.name}.`);
-    return `https://api.whatsapp.com/send/?phone=${member.whatsappPhone}&text=${text}&type=phone_number&app_absent=0`;
+    const whatsappUrl = new URL(CONTACT_INFO.whatsapp);
+    const article = member.name.startsWith('Dra.') ? 'la' : 'el';
+    whatsappUrl.searchParams.set('text', `Hola quiero sacar un turno con ${article} ${member.name}.`);
+    return whatsappUrl.toString();
 }
 
 export default function Team() {
