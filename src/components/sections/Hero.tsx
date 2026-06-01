@@ -44,7 +44,7 @@ function useCounter(target: number, duration = 2000) {
 }
 
 const stats = [
-    { target: 20, suffix: '+', label: 'Años' },
+    { target: 30, suffix: '+', label: 'Años' },
     { target: 5000, suffix: '+', label: 'Pacientes' },
     { target: 8, suffix: '', label: 'Especialidades' },
 ];

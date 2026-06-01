@@ -12,7 +12,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     {
         id: 'maria-ines',
         name: 'Dra. María Inés',
-        role: 'Directora Clínica y Especialista en Periodoncia',
+        role: 'Directora Clínica orientada a la Periodoncia',
         specialty: 'Periodoncia',
         bio: 'Líder y fundadora de nuestro centro, coordina la visión integral de la clínica. Como especialista en Periodoncia, se enfoca en la salud de los tejidos de soporte, asegurando que cada tratamiento tenga una base sólida y duradera. La importancia de tu salud gingival está a su cargo.',
         image: '/team/maria-ines.jpg',

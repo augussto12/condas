@@ -6,6 +6,7 @@ import About from './components/sections/About';
 import Team from './components/sections/Team';
 import Testimonials from './components/sections/Testimonials';
 import Gallery from './components/sections/Gallery';
+import Technology from './components/sections/Technology';
 import MapSection from './components/sections/MapSection';
 import SectionDivider from './components/ui/SectionDivider';
 import WhatsAppFloat from './components/ui/WhatsAppFloat';
@@ -49,8 +50,13 @@ function App() {
 
                 <Gallery />
 
-                {/* Gallery (ends ~#1A4A6E) â†’ Testimonials (#F0FAFA) */}
-                <SectionDivider fillColor="#F0FAFA" bgColor="#1A4A6E" />
+                {/* Gallery (ends ~#1A4A6E) to Technology (white) */}
+                <SectionDivider fillColor="#ffffff" bgColor="#1A4A6E" />
+
+                <Technology />
+
+                {/* Technology (white) to Testimonials (#F0FAFA) */}
+                <SectionDivider fillColor="#F0FAFA" bgColor="#ffffff" />
 
                 <Testimonials />
 
