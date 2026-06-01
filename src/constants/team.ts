@@ -39,7 +39,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     {
         id: 'juan-pablo',
         name: 'Dr. Juan Pablo',
-        role: 'Especialista en Ortodoncia y Estética Dental',
+        role: 'Especialista en Ortodoncia',
         specialty: 'Ortodoncia y Estética',
         bio: 'Es el responsable de diseñar sonrisas alineadas y funcionales. Lidera nuestra área de ortodoncia, especializándose en el uso de alineadores invisibles de última generación. Su enfoque combina la tecnología digital con la estética para lograr resultados rápidos y sumamente estéticos.',
         image: '/team/juan-pablo.jpg',
@@ -48,7 +48,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     {
         id: 'augusto',
         name: 'Dr. Augusto',
-        role: 'Odontología General e Implantología',
+        role: 'Formación orientada a la periodoncia',
         specialty: 'Implantología',
         bio: 'Aporta dinamismo y una visión actualizada a la atención odontológica integral. Actualmente se encuentra profundizando su formación en implantología en la Universidad Católica Argentina, sumando nuevas técnicas y herramientas para la colocación de implantes y cirugía dental.',
         image: '/team/augusto.jpg',

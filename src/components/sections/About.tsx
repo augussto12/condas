@@ -4,14 +4,14 @@ import SectionHeading from '../ui/SectionHeading';
 import AnimatedSection from '../ui/AnimatedSection';
 
 const stats = [
-    { icon: Clock, value: '20+', label: 'Años de experiencia', color: '#5EC4C6' },
+    { icon: Clock, value: '30+', label: 'Años de experiencia', color: '#5EC4C6' },
     { icon: Users, value: '5000+', label: 'Pacientes atendidos', color: '#C8A96E' },
     { icon: Award, value: '8', label: 'Especialidades', color: '#5EC4C6' },
     { icon: Heart, value: '100%', label: 'Dedicación', color: '#C8A96E' },
 ];
 
 const highlights = [
-    'Más de 20 años de trayectoria familiar',
+    'Más de 30 años de trayectoria familiar',
     'Cinco profesionales trabajando con una misma visión',
     'Odontología integral con trato cercano',
     'Un legado que cuidamos día a día',
@@ -48,7 +48,7 @@ export default function About() {
                 <SectionHeading
                     label="Sobre Nosotros"
                     title="Nuestra historia, tu confianza"
-                    subtitle="Lo que comenzó hace más de 20 años como un proyecto pequeño, hoy es una realidad compartida por cinco profesionales de la misma familia."
+                    subtitle="Lo que comenzó hace más de 30 años como un proyecto pequeño, hoy es una realidad compartida por cinco profesionales de la misma familia."
                     light
                 />
 

@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async'
 const seoData = {
   nombre: 'Consultorios Condas',
   descripcion:
-    'Centro odontológico en Mar del Plata. Endodoncia, implantología oral, periodoncia, ortodoncia, odontopediatría y más. Más de 20 años transformando sonrisas.',
+    'Centro odontológico en Mar del Plata. Endodoncia, implantología oral, periodoncia, ortodoncia, odontopediatría y más. Más de 30 años transformando sonrisas.',
   url: 'https://consultorioscondas.com',
   telefono: '+542235313208',
   direccion: 'Rivadavia 2456 3° E',

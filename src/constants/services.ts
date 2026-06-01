@@ -10,28 +10,28 @@ export const SERVICES: Service[] = [
         id: 'endodoncia',
         title: 'Endodoncia',
         description:
-            'Tratamientos de conducto con tecnología de última generación. Salvamos tus piezas dentales con procedimientos seguros y prácticamente indoloros.',
+            'Tratamientos de conducto con tecnología de última generación. Salvamos tus piezas dentales con procedimientos seguros.',
         icon: 'Zap',
     },
     {
         id: 'periodoncia',
         title: 'Periodoncia',
         description:
-            'Cuidamos la salud de tus encías y tejidos de soporte dental. Tratamientos preventivos y correctivos para mantener una base sólida.',
+            'Cuidamos la salud de tus encías y tejidos de soporte dental. Tratamientos preventivos para que puedas conservar tus piezas dentales.',
         icon: 'Shield',
     },
     {
         id: 'cirugia',
         title: 'Cirugía',
         description:
-            'Cirugías bucales con máxima precisión y seguridad. Procedimientos quirúrgicos realizados por especialistas en nuestras instalaciones.',
+            'Cirugías bucales de baja y mediana complejidad.',
         icon: 'Crosshair',
     },
     {
         id: 'implantologia',
         title: 'Implantología Oral',
         description:
-            'Implantes dentales de titanio con máxima precisión. Recuperá la funcionalidad y estética con soluciones permanentes.',
+            'Planificación digital de cada paciente y colocación de implantes de ultima tecnologia.',
         icon: 'Anchor',
     },
     {
