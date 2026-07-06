@@ -10,9 +10,9 @@ export const NAV_LINKS = [
 
 export const CONTACT_INFO = {
     phone: '+54 223 531-3208',
+    landlines: ['491-3413', '494-6105'],
     whatsapp: 'https://api.whatsapp.com/send/?phone=542235313208&text&type=phone_number&app_absent=0',
     email: 'info@consultorioscondas.com',
     address: 'Rivadavia 2456, Mar del Plata, Buenos Aires, Argentina',
     instagram: 'https://www.instagram.com/consultorioscondas/',
-    facebook: 'https://www.facebook.com/condasconsultoriodental/',
-} as const;
+    facebook: 'https://www.facebook.c

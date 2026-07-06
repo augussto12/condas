@@ -48,10 +48,9 @@ export const TEAM_MEMBERS: TeamMember[] = [
     {
         id: 'augusto',
         name: 'Dr. Augusto',
-        role: 'Formación orientada a la periodoncia',
+        role: 'Formación orientada a la implantología oral',
         specialty: 'Implantología',
         bio: 'Aporta dinamismo y una visión actualizada a la atención odontológica integral. Actualmente se encuentra profundizando su formación en implantología en la Universidad Católica Argentina, sumando nuevas técnicas y herramientas para la colocación de implantes y cirugía dental.',
         image: '/team/augusto.jpg',
         whatsappPhone: '',
-    },
-];
+  

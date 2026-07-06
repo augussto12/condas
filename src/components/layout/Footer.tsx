@@ -55,14 +55,16 @@ export default function Footer() {
                             Contacto
                         </h4>
                         <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                            <li>
-                                <a href={`tel:${CONTACT_INFO.phone}`}
-                                    className="hover:text-accent transition-colors"
-                                    style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: 'rgba(255,255,255,0.6)', fontSize: '0.875rem', minHeight: '44px' }}>
-                                    <Phone size={16} />
-                                    {CONTACT_INFO.phone}
-                                </a>
-                            </li>
+                            {CONTACT_INFO.landlines.map((landline) => (
+                                <li key={landline}>
+                                    <a href={`tel:${landline}`}
+                                        className="hover:text-accent transition-colors"
+                                        style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: 'rgba(255,255,255,0.6)', fontSize: '0.875rem', minHeight: '44px' }}>
+                                        <Phone size={16} />
+                                        {landline}
+                                    </a>
+                                </li>
+                            ))}
                             <li>
                                 <a href={`mailto:${CONTACT_INFO.email}`}
                                     className="hover:text-accent transition-colors"
@@ -132,10 +134,4 @@ export default function Footer() {
                     .footer-bottom {
                         flex-direction: column;
                         gap: 1rem;
-                        text-align: center;
-                    }
-                }
-            `}</style>
-        </footer>
-    );
-}
+   
