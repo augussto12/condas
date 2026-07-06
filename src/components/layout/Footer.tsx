@@ -55,16 +55,24 @@ export default function Footer() {
                             Contacto
                         </h4>
                         <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                            {CONTACT_INFO.landlines.map((landline) => (
-                                <li key={landline}>
-                                    <a href={`tel:${landline}`}
-                                        className="hover:text-accent transition-colors"
-                                        style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: 'rgba(255,255,255,0.6)', fontSize: '0.875rem', minHeight: '44px' }}>
-                                        <Phone size={16} />
-                                        {landline}
-                                    </a>
-                                </li>
-                            ))}
+                            <li>
+                                <span style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: 'rgba(255,255,255,0.6)', fontSize: '0.875rem', minHeight: '44px' }}>
+                                    <Phone size={16} style={{ flexShrink: 0 }} />
+                                    <span>
+                                        <a href={`tel:${CONTACT_INFO.landlines[0]}`}
+                                            className="hover:text-accent transition-colors"
+                                            style={{ color: 'inherit' }}>
+                                            {CONTACT_INFO.landlines[0]}
+                                        </a>
+                                        {' / '}
+                                        <a href={`tel:${CONTACT_INFO.landlines[1]}`}
+                                            className="hover:text-accent transition-colors"
+                                            style={{ color: 'inherit' }}>
+                                            {CONTACT_INFO.landlines[1]}
+                                        </a>
+                                    </span>
+                                </span>
+                            </li>
                             <li>
                                 <a href={`mailto:${CONTACT_INFO.email}`}
                                     className="hover:text-accent transition-colors"
