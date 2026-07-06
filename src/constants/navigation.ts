@@ -15,4 +15,5 @@ export const CONTACT_INFO = {
     email: 'info@consultorioscondas.com',
     address: 'Rivadavia 2456, Mar del Plata, Buenos Aires, Argentina',
     instagram: 'https://www.instagram.com/consultorioscondas/',
-    facebook: 'https://www.facebook.c
+    facebook: 'https://www.facebook.com/condasconsultoriodental/',
+} as const;

@@ -134,4 +134,10 @@ export default function Footer() {
                     .footer-bottom {
                         flex-direction: column;
                         gap: 1rem;
-   
+                        text-align: center;
+                    }
+                }
+            `}</style>
+        </footer>
+    );
+}
